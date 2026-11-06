@@ -1,6 +1,6 @@
 // Service worker : rend l'application installable et rapide à ouvrir.
 // Si tu modifies des fichiers, change le numéro de version ci-dessous.
-const VERSION = "nettoyage-v1";
+const VERSION = "nettoyage-v2";
 const FICHIERS = [
   "./",
   "./index.html",
@@ -9,8 +9,8 @@ const FICHIERS = [
   "./textes.js",
   "./config.js",
   "./manifest.json",
-  "./icones/residents-192.png",
-  "./icones/residents-512.png",
+  "./residents-192.png",
+  "./residents-512.png",
 ];
 
 self.addEventListener("install", (e) => {
@@ -29,7 +29,7 @@ self.addEventListener("activate", (e) => {
 // Les vidéos et Supabase ne passent pas par le cache.
 self.addEventListener("fetch", (e) => {
   const url = new URL(e.request.url);
-  if (e.request.method !== "GET" || url.origin !== location.origin || url.pathname.includes("/videos/")) return;
+  if (e.request.method !== "GET" || url.origin !== location.origin || url.pathname.endsWith(".mp4")) return;
   e.respondWith(
     fetch(e.request)
       .then((rep) => {

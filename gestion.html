@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestion nettoyage</title>
+  <meta name="theme-color" content="#1e3a34">
+  <link rel="manifest" href="manifest-gestion.json">
+  <link rel="icon" href="./gestion-192.png">
+  <link rel="apple-touch-icon" href="./gestion-192.png">
+  <link rel="stylesheet" href="gestion.css">
+</head>
+<body>
+
+  <!-- Connexion -->
+  <main id="vue-connexion" class="vue" hidden>
+    <form id="form-connexion" class="boite-connexion">
+      <div class="logo">📋</div>
+      <h1>Gestion nettoyage</h1>
+      <p class="doux">Espace réservé au personnel</p>
+      <label>E-mail <input id="email" type="email" autocomplete="username" required></label>
+      <label>Mot de passe <input id="mdp" type="password" autocomplete="current-password" required></label>
+      <button class="bouton" type="submit">Se connecter</button>
+      <p id="erreur-connexion" class="erreur" role="alert"></p>
+      <p id="alerte-config" class="alerte" hidden>
+        ⚠️ Supabase n'est pas encore configuré. Remplis <code>config.js</code> (voir LISEZMOI).
+      </p>
+    </form>
+  </main>
+
+  <!-- Tableau de bord -->
+  <div id="vue-tableau" class="vue" hidden>
+    <header class="barre">
+      <div class="marque">📋 Gestion nettoyage</div>
+      <nav class="onglets">
+        <button class="onglet actif" data-onglet="photos">Photos du jour</button>
+        <button class="onglet" data-onglet="qr">QR codes</button>
+      </nav>
+      <div class="barre-droite">
+        <button id="bouton-installer" class="bouton-petit" hidden>⬇️ Installer sur ce PC</button>
+        <button id="bouton-deconnexion" class="bouton-petit">Déconnexion</button>
+      </div>
+    </header>
+
+    <!-- Onglet photos -->
+    <section id="onglet-photos" class="contenu">
+      <div class="resume">
+        <div>
+          <h1 id="date-jour"></h1>
+          <p id="compteur" class="compteur"></p>
+        </div>
+        <div class="filtres">
+          <label><input type="checkbox" id="filtre-manquantes"> Seulement les chambres à faire</label>
+          <button id="bouton-actualiser" class="bouton-petit">🔄 Actualiser</button>
+        </div>
+      </div>
+      <p id="maj" class="doux"></p>
+      <div id="grille" class="grille"></div>
+    </section>
+
+    <!-- Onglet QR codes -->
+    <section id="onglet-qr" class="contenu" hidden>
+      <div class="resume">
+        <div>
+          <h1>QR codes des chambres</h1>
+          <p class="doux">Imprime et colle un QR code dans chaque chambre. Le résident le scanne : l'app s'ouvre directement sur sa chambre.</p>
+        </div>
+        <button class="bouton-petit" onclick="window.print()">🖨️ Imprimer</button>
+      </div>
+      <p class="doux">Adresse de l'app résidents : <code id="adresse-app"></code></p>
+      <div id="grille-qr" class="grille-qr"></div>
+    </section>
+  </div>
+
+  <!-- Grande photo -->
+  <dialog id="visionneuse">
+    <div class="visionneuse-tete">
+      <strong id="visionneuse-titre"></strong>
+      <div>
+        <button id="bouton-supprimer" class="bouton-petit danger">🗑️ Supprimer la photo</button>
+        <button id="bouton-fermer" class="bouton-petit">✕ Fermer</button>
+      </div>
+    </div>
+    <img id="visionneuse-img" alt="">
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="qrcode.js"></script>
+  <script src="gestion.js"></script>
+</body>
+</html>

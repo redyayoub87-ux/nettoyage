@@ -11,10 +11,10 @@ Deux applications installables, sans App Store, coût 0 € :
 index.html, app.js, style.css   → app Résidents
 textes.js                       → tâches + traductions (5 langues)
 config.js                       → TES RÉGLAGES (seul fichier à remplir)
-videos/                         → tes vidéos (lit.mp4, armoire.mp4, table.mp4, poubelle.mp4)
-gestion/                        → app Gestion (PC)
+lit.mp4, armoire.mp4, ...        → tes vidéos (à ajouter, à côté des autres fichiers)
+gestion.html, gestion.js...      → app Gestion (PC)
 supabase.sql                    → à coller une fois dans Supabase
-icones/, manifest.json, sw.js   → ce qui rend l'app installable
+icônes .png, manifest, sw.js     → ce qui rend l'app installable
 ```
 
 ## Étape 1 — Supabase (stockage des photos, gratuit)
@@ -32,7 +32,7 @@ icones/, manifest.json, sw.js   → ce qui rend l'app installable
 
 ## Étape 2 — Tes vidéos
 
-Mets tes 4 vidéos dans `videos/` avec exactement ces noms :
+Ajoute tes 4 vidéos à côté des autres fichiers (pas dans un dossier) avec exactement ces noms :
 `lit.mp4`, `armoire.mp4`, `table.mp4`, `poubelle.mp4`.
 
 Conseil : compresse-les avec HandBrake (gratuit), préréglage « Fast 720p30 », moins de 5 Mo chacune.
@@ -45,7 +45,7 @@ Tant qu'une vidéo manque, l'app affiche « Vidéo bientôt disponible ».
 3. **Settings → Pages** → Source : *Deploy from a branch* → branche `main` → **Save**.
 4. Après 1-2 minutes, ton app est en ligne :
    - Résidents : `https://TONNOM.github.io/nettoyage/`
-   - Gestion : `https://TONNOM.github.io/nettoyage/gestion/`
+   - Gestion : `https://TONNOM.github.io/nettoyage/gestion.html`
 
 ## Étape 4 — Installer l'app Gestion sur ton PC
 

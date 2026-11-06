@@ -172,7 +172,7 @@ $("#bouton-supprimer").onclick = async () => {
 
 // ---------- QR codes ----------
 function adresseApp() {
-  return new URL("../index.html", location.href).href;
+  return new URL("index.html", location.href).href;
 }
 let qrFaits = false;
 function afficherQR() {
@@ -252,7 +252,7 @@ $("#bouton-installer").onclick = async () => {
   invitation = null;
   $("#bouton-installer").hidden = true;
 };
-if ("serviceWorker" in navigator) navigator.serviceWorker.register("../sw.js").catch(() => {});
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 
 // ---------- Démarrage ----------
 session ? vueTableau() : vueConnexion();

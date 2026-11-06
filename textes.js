@@ -5,10 +5,10 @@
 // ============================================================
 
 const TACHES = [
-  { id: "lit",      icone: "🛏️", video: "videos/lit.mp4" },
-  { id: "armoire",  icone: "👕", video: "videos/armoire.mp4" },
-  { id: "table",    icone: "🧽", video: "videos/table.mp4" },
-  { id: "poubelle", icone: "🗑️", video: "videos/poubelle.mp4" },
+  { id: "lit",      icone: "🛏️", video: "lit.mp4" },
+  { id: "armoire",  icone: "👕", video: "armoire.mp4" },
+  { id: "table",    icone: "🧽", video: "table.mp4" },
+  { id: "poubelle", icone: "🗑️", video: "poubelle.mp4" },
 ];
 
 const LANGUES = [
