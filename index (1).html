@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ma chambre propre</title>
+  <meta name="theme-color" content="#0f766e">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icones/residents-192.png">
+  <link rel="apple-touch-icon" href="icones/residents-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ma chambre">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Écran 1 : choix de la langue -->
+  <main id="ecran-langue" class="ecran" hidden>
+    <div class="logo">🧹</div>
+    <h1 id="titre-langue">Choisis ta langue</h1>
+    <div id="liste-langues" class="grille-langues"></div>
+  </main>
+
+  <!-- Écran 2 : choix de la chambre -->
+  <main id="ecran-chambre" class="ecran" hidden>
+    <div class="logo">🚪</div>
+    <h1 data-t="choisirChambre"></h1>
+    <div id="liste-chambres" class="grille-chambres"></div>
+  </main>
+
+  <!-- Écran 3 : tâches + photo -->
+  <main id="ecran-taches" class="ecran" hidden>
+    <header class="entete">
+      <div>
+        <h1 data-t="titre"></h1>
+        <p class="sous-titre"><span data-t="chambre"></span> <strong id="num-chambre"></strong></p>
+      </div>
+      <button id="bouton-reglages" class="bouton-rond" aria-label="Changer">⚙️</button>
+    </header>
+
+    <p class="consigne" data-t="consigne"></p>
+    <div id="liste-taches"></div>
+
+    <section class="carte carte-photo">
+      <h2>📷 <span data-t="photo"></span></h2>
+      <p class="avertissement" data-t="pasDePersonnes"></p>
+      <p id="deja-envoye" class="ok" data-t="dejaEnvoye" hidden></p>
+
+      <label id="bouton-photo" class="bouton bouton-principal">
+        📷 <span data-t="photo"></span>
+        <input id="champ-photo" type="file" accept="image/*" capture="environment" hidden>
+      </label>
+
+      <img id="apercu" alt="" hidden>
+      <div id="actions-photo" class="actions" hidden>
+        <button id="bouton-refaire" class="bouton bouton-secondaire" data-t="refaire"></button>
+        <button id="bouton-envoyer" class="bouton bouton-principal" data-t="envoyer"></button>
+      </div>
+      <p id="statut-photo" class="statut" role="status"></p>
+    </section>
+
+    <div id="aide-installation" class="aide-installation" hidden>
+      <button id="bouton-installer" class="bouton bouton-secondaire" data-t="installer" hidden></button>
+      <p id="texte-ios" data-t="installerIos" hidden></p>
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="textes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

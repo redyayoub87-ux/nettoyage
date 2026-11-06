@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "Gestion nettoyage",
+  "short_name": "Gestion",
+  "description": "Suivi des photos de chambres et QR codes",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f1ea",
+  "theme_color": "#1e3a34",
+  "icons": [
+    { "src": "../icones/gestion-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "../icones/gestion-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "../icones/gestion-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
